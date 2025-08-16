@@ -1,7 +1,8 @@
 # line-following-bot
 
 # What is this?
-This is a simple line following robot. It uses three IR sensors to pathfind, and uses one hypersonic sensor to achieve basic object detection. 
+This is a simple line following robot, made as the culminating project for Robotics for Sustainable Economic Growth around the World CREATE course hosted by the University of Toronto.
+It uses three IR sensors to pathfind, and uses one hypersonic sensor to achieve basic object detection. 
 
 # How to use the code
 - make sure your pin connections are set to the right sockets
