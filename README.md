@@ -1,5 +1,3 @@
-# line-following-bot
-
 # What is this?
 This is the code I wrote that powered a simple line following robot that achieved the fastest base time overall, and second during Week E at the Robotics for Sustainable Economic Growth course held by the University of Toronto's CREATE program.
 
