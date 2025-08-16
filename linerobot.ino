@@ -1,3 +1,30 @@
+/* 
+This code was written for a three IR sensor setup, relying on the middle sensor for detecting straights, and left and right sensors to detect turns. 
+This prevents jittering and results in smoother turns and faster traversal.
+
+To adapt this code for two sensors, simply delete any related code for one of the IR sensors and update the 
+line detection logic. The updated logic should have the bot go straight if neither sensor detects a line, and
+have the bot turn the other way if one of the sensor detects a line.
+
+Note, this would reduce power consumption, but does result in a more jittery bot as it will constantly micro correct
+
+
+Sample Logic:
+      if (state_left == 0 && state_right == 0) {
+            goStraight();
+      }
+      else if (state_left == 1) {
+            turnRight();
+      }
+      else if (state_right == 1) {
+            turnLeft();
+      }
+      else {
+            stopMotors();     
+      }
+*/
+
+
 #include <AFMotor.h>
 
 // Motor and Sensor Setup
