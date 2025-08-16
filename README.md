@@ -16,7 +16,11 @@ It was written in Arduino with three IR sensors, one Ultrasonic Sensor and two M
 - can support up to 500g while still achieving under 20 second lap times (heavier weights have not been tested)
 - Basic object detection. It's hardcoded to go around one side. There is code in thhis repository for theoretically more advanced object detection, which would involve a servo
 
-### Other Stuff
+
+### How did it perform?
 - Allegedly the fastest bot throughout all weeks
+- Second overall for Week E
+
+### Other Stuff
 - Went through about 7 IR sensors before we found a working one
 - POWER GUZZLER (will use up a 9V battery essentially per run)
