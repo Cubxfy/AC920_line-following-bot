@@ -1,5 +1,6 @@
 #include <AFMotor.h>
 
+// Motor and Sensor Setup
 AF_DCMotor leftMotor(3);
 AF_DCMotor rightMotor(4);
 
@@ -10,7 +11,7 @@ const int rightIR = A4;
 const int FtrigPin = A1;
 const int FechoPin = A2;
 
-// variables
+// Other Variables
 int left_motor_speed = 0;
 int right_motor_speed = 0;
 
@@ -21,6 +22,7 @@ int state_right;
 int objFrontDist = 0;
 
 
+// Function to get distance from an object using an Ultrasonic Sensor
 float readUltrasonicCM(int trigPin, int echoPin) {
   digitalWrite(trigPin, LOW); delayMicroseconds(2);
   digitalWrite(trigPin, HIGH); delayMicroseconds(10);
@@ -47,6 +49,7 @@ void setup () {
 
 }
 
+// Movement Functions. Note that our Motors were wired inversely, and thus the code will also be written inversely (backwards moves the motor forwards)
 void turnLeft() {
       leftMotor.setSpeed(120);
       rightMotor.setSpeed(195);
@@ -82,6 +85,7 @@ void stopMotors() {
 void loop () {
       objFrontDist = readUltrasonicCM(FtrigPin, FechoPin);
 
+      // hard coded object detection. Triggers if an object is 12 cm away)
       if (objFrontDist <= 12) {
             stopMotors();
             turnRight();
@@ -101,6 +105,9 @@ void loop () {
             return;
       }
 
+
+      // Pathfinding Code
+      
       state_left = digitalRead(leftIR);
       state_mid = digitalRead(midIR);
       state_right = digitalRead(rightIR);
